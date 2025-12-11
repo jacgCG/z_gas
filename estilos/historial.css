@@ -1,0 +1,198 @@
+/* --- ESTILOS GENERALES (PANTALLA) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    /* Fondo específico para historial */
+    background-image: url('../img/history.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* Ocultar elementos de impresión en la pantalla normal */
+.only-print {
+    display: none;
+}
+
+/* CONTENEDOR PRINCIPAL DE VIDRIO */
+.contenido {
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(0, 30, 60, 0.85); /* Azul oscuro transparente */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 50px;
+}
+
+/* ENCABEZADO Y BOTONES */
+.botones-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #4db8ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botones de navegación */
+.btn-nav {
+    background: transparent;
+    border: 1px solid #4db8ff;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-nav:hover {
+    background: #4db8ff;
+    color: #000;
+}
+
+/* Botón de Imprimir destacado */
+.btn-imprimir {
+    background: #00d2d3;
+    color: #000;
+    border: none;
+    border: 1px solid #00d2d3;
+}
+
+.btn-imprimir:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 210, 211, 0.5);
+}
+
+/* TABLA MODERNA */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    color: #4db8ff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Estilos para etiquetas de estado/tipo */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.bg-prev { background: rgba(0, 255, 170, 0.2); color: #00ffaa; border: 1px solid #00ffaa; }
+.bg-corr { background: rgba(255, 77, 77, 0.2); color: #ff4d4d; border: 1px solid #ff4d4d; }
+.bg-otro { background: rgba(77, 184, 255, 0.2); color: #4db8ff; border: 1px solid #4db8ff; }
+
+
+/* --- ESTILOS DE IMPRESIÓN (AQUÍ OCURRE LA MAGIA) --- */
+@media print {
+    /* 1. Ocultar todo lo que no queremos en el papel */
+    .no-print, 
+    .botones-superior, 
+    .btn-nav, 
+    .btn-imprimir {
+        display: none !important;
+    }
+
+    /* 2. Mostrar encabezado de reporte solo al imprimir */
+    .only-print {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+    }
+    
+    .print-logo {
+        height: 60px;
+        filter: grayscale(100%); /* Logo en escala de grises para ahorrar tinta color */
+    }
+
+    /* 3. Limpiar el fondo y colores para ahorrar tinta */
+    body, .contenido {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        backdrop-filter: none !important;
+    }
+
+    /* 4. Estilo de tabla para papel */
+    table {
+        width: 100%;
+        border: 1px solid #000;
+    }
+    
+    th {
+        background-color: #f0f0f0 !important; /* Gris claro */
+        color: #000 !important;
+        border: 1px solid #000;
+        font-weight: bold;
+    }
+    
+    td {
+        border: 1px solid #000;
+        color: #000;
+    }
+    
+    /* Quitar colores de las etiquetas, solo texto negrita */
+    .badge {
+        border: none;
+        background: none;
+        color: #000;
+        font-weight: bold;
+        padding: 0;
+    }
+}

@@ -1,0 +1,166 @@
+/* RESETEO BÁSICO */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fuente más moderna */
+    color: white;
+    text-align: center;
+    
+    /* Fondo con imagen fija */
+    background-image: url('../img/zgasM.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- ENCABEZADO (HEADER) --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Fondo oscuro semi-transparente (Elegante) */
+    background: rgba(0, 30, 80, 0.95); 
+    
+    /* Efecto de desenfoque detrás (Glassmorphism) */
+    backdrop-filter: blur(10px); 
+    
+    padding: 15px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+    /* Fijar arriba */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container img {
+    height: 45px; /* Un poco más grande para presencia de marca */
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.5));
+    display: block;
+}
+
+/* Contenedor derecho (Usuario + Botón) */
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el nombre y el botón */
+}
+
+.welcome-msg {
+    color: #e0e0e0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.welcome-msg strong {
+    color: #4db8ff; /* Azul claro para resaltar el nombre */
+    font-weight: 600;
+}
+
+/* Botón de Cerrar Sesión */
+.logout-button {
+    background-color: transparent;
+    border: 2px solid #ff4d4d; /* Borde rojo elegante */
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 8px 20px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+}
+
+.logout-button:hover {
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    transform: translateY(-2px);
+}
+
+/* --- CONTENEDOR DE TARJETAS --- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;            
+    max-width: 1200px;          
+    margin: 40px auto 80px auto; /* Margen inferior extra para no chocar con footer */
+    padding: 20px;
+    flex: 1; /* Empuja el footer hacia abajo si hay poco contenido */
+}
+
+.card {
+    background-color: rgba(0, 30, 60, 0.85); /* Fondo más oscuro para contraste */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 220px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    background-color: #1e90ff; /* Azul brillante al pasar mouse */
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(30, 144, 255, 0.4);
+    border-color: #1e90ff;
+}
+
+.card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.card a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Hace que todo el link funcione mejor */
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+    background: rgba(0, 20, 50, 0.98); /* Coincide con el header */
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    color: #ccc; 
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto; /* Asegura que se quede abajo */
+}
+
+footer p {
+    margin: 3px 0;
+    letter-spacing: 0.5px;
+}
+
+footer p:first-child {
+    color: #fff;
+    font-weight: 600;
+}

@@ -1,0 +1,241 @@
+/* CONFIGURACIÓN GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    /* Fondo específico para repuestos */
+    background-image: url('../img/repImg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* CONTENEDOR PRINCIPAL DE VIDRIO */
+.contenido {
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(0, 30, 60, 0.85); /* Azul oscuro transparente */
+    backdrop-filter: blur(10px);        /* Efecto borroso */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 50px;
+}
+
+/* ENCABEZADO Y BOTONES SUPERIORES */
+.botones-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+    gap: 15px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #4db8ff; /* Azul cian corporativo */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid #4db8ff;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-nav:hover {
+    background: #4db8ff;
+    color: #000;
+}
+
+/* FORMULARIO DE AGREGAR (BARRA SUPERIOR) */
+.seccion-agregar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.seccion-agregar h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Grid para organizar el formulario */
+.form-repuestos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+/* Campos que ocupan todo el ancho (como descripción) */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: #aaa;
+    margin-left: 5px;
+}
+
+.form-repuestos input, 
+.form-repuestos select,
+.form-repuestos textarea {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-repuestos textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-repuestos button {
+    background: #00d2d3;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 42px; /* Altura para alinear con inputs */
+}
+
+.form-repuestos button:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* TABLA MODERNA */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    color: #4db8ff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    white-space: nowrap;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+/* ESTILOS DE LOS INPUTS DENTRO DE LA TABLA */
+td form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+/* Inputs transparentes en la tabla */
+td input, 
+td textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: #eee;
+    padding: 6px;
+    width: 100%;
+    font-size: 14px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+td textarea {
+    resize: none;
+    height: 30px;
+    overflow: hidden;
+}
+
+td input:focus, 
+td textarea:focus {
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid #4db8ff;
+    outline: none;
+    border-radius: 4px;
+}
+
+/* Botones de acción (Iconos) */
+td button {
+    background: transparent;
+    border: none;
+    color: #4db8ff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+td button:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    color: #fff;
+}
+
+/* Botón Eliminar rojo */
+.btn-eliminar {
+    color: #ff4d4d !important;
+}
+.btn-eliminar:hover {
+    color: #ff0000 !important;
+}

@@ -1,0 +1,199 @@
+/* CONFIGURACIÓN GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    /* Fondo fijo para toda la pantalla */
+    background-image: url('../img/usuariosI.jpg'); /* O usa zgasM.jpg si prefieres uniformidad */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineado arriba */
+    padding-top: 40px;
+}
+
+/* CONTENEDOR PRINCIPAL DE VIDRIO */
+.contenido {
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(0, 30, 60, 0.85); /* Azul oscuro transparente */
+    backdrop-filter: blur(10px);        /* Efecto borroso de fondo */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 50px;
+}
+
+/* ENCABEZADO Y BOTONES SUPERIORES */
+.botones-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #4db8ff; /* Azul cian corporativo */
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid #4db8ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-nav:hover {
+    background: #4db8ff;
+    color: #000;
+}
+
+/* FORMULARIO DE AGREGAR (BARRA SUPERIOR) */
+.seccion-agregar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.seccion-agregar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.form-registro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    align-items: end;
+}
+
+.form-registro input, 
+.form-registro select {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-registro button {
+    background: #00d2d3; /* Color turquesa para acción principal */
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-registro button:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* TABLA MODERNA */
+.tabla-contenedor {
+    overflow-x: auto; /* Scroll horizontal si es necesario */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    color: #4db8ff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+/* ESTILOS DE LOS INPUTS DENTRO DE LA TABLA */
+td form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Hacemos que los inputs parezcan texto normal hasta que se editan */
+td input, 
+td select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: #eee;
+    padding: 5px;
+    width: 100%;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+td input:focus, 
+td select:focus {
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid #4db8ff;
+    outline: none;
+}
+
+/* BOTONES PEQUEÑOS DE ACCIÓN (GUARDAR) */
+td button {
+    background: transparent;
+    border: none;
+    color: #4db8ff; /* Color del icono */
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    opacity: 0.5; /* Sutil por defecto */
+    transition: 0.3s;
+}
+
+td button:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    color: #fff;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    color: #ff4d4d !important;
+}
+.btn-eliminar:hover {
+    color: #ff0000 !important;
+}
